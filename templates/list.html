@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+<body>
+
+
+{% if Shop1 %}
+    <table class="table table-bordered"  class="table-hover">
+        <thead class="thead-dark">
+        <tr class="info">
+            <th>ID</th>
+            <th>Name</th>
+            <th>LastName</th>
+            <th>EmailId</th>
+            <th>Contact NO:</th>
+            <th>Edit/Delete</th>
+            <th>primay key</th>
+        </tr>
+        </thead>
+        {% for list12 in Shop1 %}
+            <tbody>
+            <td>{{ list12.id }}</td>
+            <td>{{ list12.eid }}</td>
+            <td>{{ list12.name }}</td>
+            <td>{{ list12.lastname }}</td>
+            <td>{{ list12.Email }}</td>
+            <td>{{ list12.contact }}</td>
+            <td>
+                <a href="/update/{{ list12.id }}"><span class="glyphicon glyphicon-pencil">Edit</span></a>
+                <a href="/delete/{{ list12.id }}" id="delete">Delete</a>
+            </td>
+            </tbody>
+
+        {% endfor %}
+
+    </table>
+{% else %}
+    <p> Sorry No Data</p>
+{% endif %}
+<center><a href="/shop" class="btn btn-primary">Add New Record</a></center>
+</body>
+</html>
